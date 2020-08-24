@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, View, Text } from 'react-native';
-import SvgUri from 'react-native-svg';
+import { SvgUri } from 'react-native-svg';
 
 // import { Container } from './styles';
 
@@ -35,7 +35,7 @@ const Africa = () => {
                 <View>
                     {countries.map(country => {
                         return (
-                            <View style={{ alignItems: "center", justifyContent: "center", backgroundColor: "#ddd", borderRadius: 4, padding: 15, marginVertical: 15 }} key={country.name}>
+                            <View style={{ alignItems: "center", justifyContent: "center", backgroundColor: "#ddd", borderRadius: 4, padding: 15, marginBottom: 15 }} key={country.name}>
                                 <SvgUri width={200} height={100} uri={country.flag} />
                                 <Text>{country.name}</Text>
                             </View>

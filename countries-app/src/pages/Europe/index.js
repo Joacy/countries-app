@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, View, Text } from 'react-native';
-import SvgUri from 'react-native-svg';
+import { SvgUri } from 'react-native-svg';
 
 // import { Container } from './styles';
 

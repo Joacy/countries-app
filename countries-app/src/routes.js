@@ -1,13 +1,8 @@
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
-import { NavigationContainer, DrawerActions } from '@react-navigation/native';
-import {
-    createDrawerNavigator,
-    DrawerContentScrollView,
-    DrawerItemList,
-    DrawerItem,
-} from '@react-navigation/drawer';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import { Feather } from '@expo/vector-icons';
 
 import Africa from './pages/Africa';
@@ -16,57 +11,216 @@ import Asia from './pages/Asia';
 import Europe from './pages/Europe';
 import Oceania from './pages/Oceania';
 
-function Header ({ navigation }) {
+function MenuScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                padding: 15,
-            }}
-        >
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 15 }}>
             <TouchableOpacity
-                style={{
-                    alignItems: "center",
-                    justifyContent: "center",
-                    alignSelf: "flex-end",
-                    width: 36,
-                    height: 36,
-                    backgroundColor: "#232323",
-                    borderRadius: 4,
-                }}
-                onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+                activeOpacity={0.7}
+                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                onPress={() => navigation.navigate('Africa')}
             >
-                <Feather
-                    name="menu"
-                    size={28}
-                    color="white"
-                />
+                <Text style={{ color: "#ffffff", textAlign: "center" }}>Africa</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                activeOpacity={0.7}
+                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                onPress={() => navigation.navigate('Americas')}
+            >
+                <Text style={{ color: "#ffffff", textAlign: "center" }}>Americas</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                activeOpacity={0.7}
+                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                onPress={() => navigation.navigate('Asia')}
+            >
+                <Text style={{ color: "#ffffff", textAlign: "center" }}>Asia</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                activeOpacity={0.7}
+                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                onPress={() => navigation.navigate('Europe')}
+            >
+                <Text style={{ color: "#ffffff", textAlign: "center" }}>Europe</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                activeOpacity={0.7}
+                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                onPress={() => navigation.navigate('Oceania')}
+            >
+                <Text style={{ color: "#ffffff", textAlign: "center" }}>Oceania</Text>
             </TouchableOpacity>
         </View>
     );
 }
 
-const Drawer = createDrawerNavigator();
-
-function Menu () {
+function ModalAfricaScreen ({ navigation }) {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Header" component={Header} />
-            <Drawer.Screen name="Africa" component={Africa} />
-            <Drawer.Screen name="Americas" component={Americas} />
-            <Drawer.Screen name="Asia" component={Asia} />
-            <Drawer.Screen name="Europe" component={Europe} />
-            <Drawer.Screen name="Oceania" component={Oceania} />
-        </Drawer.Navigator>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                position: "relative",
+            }}
+        >
+            <Feather
+                style={{
+                    backgroundColor: "transparent",
+                    position: "absolute",
+                    top: 15,
+                    left: 10,
+                    zIndex: 10,
+                }}
+                name="arrow-left"
+                size={24}
+                color={"#434343"}
+                onPress={() => navigation.goBack()}
+            />
+            <Africa />
+        </View>
     );
 }
 
-export default function Routes () {
+function ModalAmericasScreen ({ navigation }) {
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                position: "relative",
+            }}
+        >
+            <Feather
+                style={{
+                    backgroundColor: "transparent",
+                    position: "absolute",
+                    top: 15,
+                    left: 10,
+                    zIndex: 10,
+                }}
+                name="arrow-left"
+                size={24}
+                color={"#434343"}
+                onPress={() => navigation.goBack()}
+            />
+            <Americas />
+        </View>
+    );
+}
+
+function ModalAsiaScreen ({ navigation }) {
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                position: "relative",
+            }}
+        >
+            <Feather
+                style={{
+                    backgroundColor: "transparent",
+                    position: "absolute",
+                    top: 15,
+                    left: 10,
+                    zIndex: 10,
+                }}
+                name="arrow-left"
+                size={24}
+                color={"#434343"}
+                onPress={() => navigation.goBack()}
+            />
+            <Asia />
+        </View>
+    );
+}
+
+function ModalEuropeScreen ({ navigation }) {
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                position: "relative",
+            }}
+        >
+            <Feather
+                style={{
+                    backgroundColor: "transparent",
+                    position: "absolute",
+                    top: 15,
+                    left: 10,
+                    zIndex: 10,
+                }}
+                name="arrow-left"
+                size={24}
+                color={"#434343"}
+                onPress={() => navigation.goBack()}
+            />
+            <Europe />
+        </View>
+    );
+}
+
+function ModalOceaniaScreen ({ navigation }) {
+    return (
+        <View
+            style={{
+                flex: 1,
+                justifyContent: "center",
+                backgroundColor: "transparent",
+                position: "relative",
+            }}
+        >
+            <Feather
+                style={{
+                    backgroundColor: "transparent",
+                    position: "absolute",
+                    top: 15,
+                    left: 10,
+                    zIndex: 10,
+                }}
+                name="arrow-left"
+                size={24}
+                color={"#434343"}
+                onPress={() => navigation.goBack()}
+            />
+            <Oceania />
+        </View>
+    );
+}
+
+const MenuStack = createStackNavigator();
+const AppStack = createStackNavigator();
+
+function MenuStackScreen () {
+    return (
+        <MenuStack.Navigator headerMode="none">
+            <MenuStack.Screen name="Menu" component={MenuScreen} />
+        </MenuStack.Navigator>
+    );
+}
+
+const Routes = () => {
     return (
         <NavigationContainer>
-            <Menu />
+            <AppStack.Navigator mode="modal" headerMode="none">
+                <AppStack.Screen name="Menu" component={MenuStackScreen} />
+                <AppStack.Screen name="Africa" component={ModalAfricaScreen} />
+                <AppStack.Screen name="Americas" component={ModalAmericasScreen} />
+                <AppStack.Screen name="Asia" component={ModalAsiaScreen} />
+                <AppStack.Screen name="Europe" component={ModalEuropeScreen} />
+                <AppStack.Screen name="Oceania" component={ModalOceaniaScreen} />
+            </AppStack.Navigator>
         </NavigationContainer>
     );
 }
+
+export default Routes;
