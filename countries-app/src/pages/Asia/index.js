@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, View, Text } from 'react-native';
 import { SvgUri } from 'react-native-svg';
 
-// import { Container } from './styles';
-
 import api from '../../services/api';
+
+import styles from './styles';
 
 const Asia = () => {
     const [countries, setCountries] = useState([]);
@@ -24,24 +24,16 @@ const Asia = () => {
     }, []);
 
     return (
-        <SafeAreaView
-            style={{
-                background: "#232323",
-                flex: 1,
-                padding: 15,
-            }}
-        >
+        <SafeAreaView>
             <ScrollView>
-                <View>
-                    {countries.map(country => {
-                        return (
-                            <View style={{ alignItems: "center", justifyContent: "center", backgroundColor: "#ddd", borderRadius: 4, padding: 15, marginBottom: 15 }} key={country.name}>
-                                <SvgUri width={200} height={100} uri={country.flag} />
-                                <Text>{country.name}</Text>
-                            </View>
-                        );
-                    })}
-                </View>
+                {countries.map(country => {
+                    return (
+                        <View style={styles.country} key={country.name}>
+                            <SvgUri width={200} height={100} uri={country.flag} />
+                            <Text style={styles.name}>{country.name}</Text>
+                        </View>
+                    );
+                })}
             </ScrollView>
         </SafeAreaView>
     );

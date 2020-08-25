@@ -11,47 +11,49 @@ import Asia from './pages/Asia';
 import Europe from './pages/Europe';
 import Oceania from './pages/Oceania';
 
+import styles from './styles/menuStyle';
+
 function MenuScreen ({ navigation }) {
     return (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: 15 }}>
+        <View style={styles.container}>
             <TouchableOpacity
                 activeOpacity={0.7}
-                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                style={styles.button}
                 onPress={() => navigation.navigate('Africa')}
             >
-                <Text style={{ color: "#ffffff", textAlign: "center" }}>Africa</Text>
+                <Text style={styles.buttonText}>Africa</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 activeOpacity={0.7}
-                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                style={styles.button}
                 onPress={() => navigation.navigate('Americas')}
             >
-                <Text style={{ color: "#ffffff", textAlign: "center" }}>Americas</Text>
+                <Text style={styles.buttonText}>Americas</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 activeOpacity={0.7}
-                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                style={styles.button}
                 onPress={() => navigation.navigate('Asia')}
             >
-                <Text style={{ color: "#ffffff", textAlign: "center" }}>Asia</Text>
+                <Text style={styles.buttonText}>Asia</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 activeOpacity={0.7}
-                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                style={styles.button}
                 onPress={() => navigation.navigate('Europe')}
             >
-                <Text style={{ color: "#ffffff", textAlign: "center" }}>Europe</Text>
+                <Text style={styles.buttonText}>Europe</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 activeOpacity={0.7}
-                style={{ marginVertical: 5, paddingVertical: 5, paddingHorizontal: 15, backgroundColor: "#434343", width: "100%", borderRadius: 4 }}
+                style={styles.button}
                 onPress={() => navigation.navigate('Oceania')}
             >
-                <Text style={{ color: "#ffffff", textAlign: "center" }}>Oceania</Text>
+                <Text style={styles.buttonText}>Oceania</Text>
             </TouchableOpacity>
         </View>
     );
@@ -59,27 +61,16 @@ function MenuScreen ({ navigation }) {
 
 function ModalAfricaScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                position: "relative",
-            }}
-        >
-            <Feather
-                style={{
-                    backgroundColor: "transparent",
-                    position: "absolute",
-                    top: 15,
-                    left: 10,
-                    zIndex: 10,
-                }}
-                name="arrow-left"
-                size={24}
-                color={"#434343"}
-                onPress={() => navigation.goBack()}
-            />
+        <View style={styles.modalRegion}>
+            <View style={styles.arrowView} >
+                <Feather
+                    style={styles.arrow}
+                    name="arrow-left"
+                    size={24}
+                    color={"#E1D6FF"}
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
             <Africa />
         </View>
     );
@@ -87,27 +78,16 @@ function ModalAfricaScreen ({ navigation }) {
 
 function ModalAmericasScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                position: "relative",
-            }}
-        >
-            <Feather
-                style={{
-                    backgroundColor: "transparent",
-                    position: "absolute",
-                    top: 15,
-                    left: 10,
-                    zIndex: 10,
-                }}
-                name="arrow-left"
-                size={24}
-                color={"#434343"}
-                onPress={() => navigation.goBack()}
-            />
+        <View style={styles.modalRegion}>
+            <View style={styles.arrowView} >
+                <Feather
+                    style={styles.arrow}
+                    name="arrow-left"
+                    size={24}
+                    color={"#E1D6FF"}
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
             <Americas />
         </View>
     );
@@ -115,27 +95,16 @@ function ModalAmericasScreen ({ navigation }) {
 
 function ModalAsiaScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                position: "relative",
-            }}
-        >
-            <Feather
-                style={{
-                    backgroundColor: "transparent",
-                    position: "absolute",
-                    top: 15,
-                    left: 10,
-                    zIndex: 10,
-                }}
-                name="arrow-left"
-                size={24}
-                color={"#434343"}
-                onPress={() => navigation.goBack()}
-            />
+        <View style={styles.modalRegion}>
+            <View style={styles.arrowView} >
+                <Feather
+                    style={styles.arrow}
+                    name="arrow-left"
+                    size={24}
+                    color={"#E1D6FF"}
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
             <Asia />
         </View>
     );
@@ -143,27 +112,16 @@ function ModalAsiaScreen ({ navigation }) {
 
 function ModalEuropeScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                position: "relative",
-            }}
-        >
-            <Feather
-                style={{
-                    backgroundColor: "transparent",
-                    position: "absolute",
-                    top: 15,
-                    left: 10,
-                    zIndex: 10,
-                }}
-                name="arrow-left"
-                size={24}
-                color={"#434343"}
-                onPress={() => navigation.goBack()}
-            />
+        <View style={styles.modalRegion}>
+            <View style={styles.arrowView} >
+                <Feather
+                    style={styles.arrow}
+                    name="arrow-left"
+                    size={24}
+                    color={"#E1D6FF"}
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
             <Europe />
         </View>
     );
@@ -171,27 +129,16 @@ function ModalEuropeScreen ({ navigation }) {
 
 function ModalOceaniaScreen ({ navigation }) {
     return (
-        <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                backgroundColor: "transparent",
-                position: "relative",
-            }}
-        >
-            <Feather
-                style={{
-                    backgroundColor: "transparent",
-                    position: "absolute",
-                    top: 15,
-                    left: 10,
-                    zIndex: 10,
-                }}
-                name="arrow-left"
-                size={24}
-                color={"#434343"}
-                onPress={() => navigation.goBack()}
-            />
+        <View style={styles.modalRegion}>
+            <View style={styles.arrowView} >
+                <Feather
+                    style={styles.arrow}
+                    name="arrow-left"
+                    size={24}
+                    color={"#E1D6FF"}
+                    onPress={() => navigation.goBack()}
+                />
+            </View>
             <Oceania />
         </View>
     );
